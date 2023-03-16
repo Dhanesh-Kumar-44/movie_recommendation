@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Movie Rating </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='rating.css') }}">
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Movie Rating</h1>
+             </div></br>
+<!--          <h2 class="bottom">-->
+<!--                 MR: {{session.username}}!!</br></br>-->
+<!--            </h2></br></br></br>-->
+            <h2 class="word">
+                <form action="{{ url_for('movie_rating') }}" method="post">
+                    <fieldset class="rating">
+                         <legend>Movie name: {{ title }}</legend> <br>
+                        <input type="text" id="movie_id" name="movie_id" value={{movie_id}}
+                            aria-label="No rating.">
+                         <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked=""
+                            aria-label="No rating.">
+
+                         <input type="radio" id="rate1" name="rating" value="1">
+                         <label for="rate1">1 star</label>
+
+                         <input type="radio" id="rate2" name="rating" value="2">
+                         <label for="rate2">2 stars</label>
+
+                         <input type="radio" id="rate3" name="rating" value="3">
+                         <label for="rate3">3 stars</label>
+
+                         <input type="radio" id="rate4" name="rating" value="4">
+                         <label for="rate4">4 stars</label>
+
+                         <input type="radio" id="rate5" name="rating" value="5">
+                         <label for="rate5">5 stars</label>
+
+                         <span class="focus-ring"></span>
+                        </br>
+                      </fieldset>
+                    </br>
+                    <input type="submit" value="Movie Rating">
+
+<!--                  <div class="msg">{{ msg }}</div>-->
+<!--                    <div class="msg">Movie name: {{ title }}</div>-->
+<!--                    <div class="rating">-->
+<!--                      <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>-->
+<!--                      <input type=”radio” name=”rating” value=”4″ id=”4″><label for=”4″>☆</label>-->
+<!--                      <input type=”radio” name=”rating” value=”3″ id=”3″><label for=”3″>☆</label>-->
+<!--                      <input type=”radio” name=”rating” value=”2″ id=”2″><label for=”2″>☆</label>-->
+<!--                      <input type=”radio” name=”rating” value=”1″ id=”1″><label for=”1″>☆</label>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    <div class="msg">{{ movie_id }}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input id="rating" name="rating" type="radio" placeholder="Enter the move rating" class="textbox"/></br></br>&ndash;&gt;-->
+<!--                    <input type="submit" class="btn" value="Rating"></br>-->
+                </form>
+            </h2>
+          </div>
+        </div>
+    </body>
+</html>

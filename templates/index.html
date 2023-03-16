@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<head>
+        <meta charset="UTF-8">
+        <title> Index </title>
+<!--        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+            <form action="{{ url_for('search') }}" method="post">
+                <input class="form-control" name="search" placeholder="Enter Movie Name" autocomplete="off" autofocus="autofocus" type="text">
+                <input type="submit" class="btn" value="Search"></br></br></br>
+            </form>
+<!--            {% if result %}-->
+<!--                <p>blah blah blah blah</p>-->
+<!--            {% endif %}-->
+            {% if result %}
+            <table>
+            <tr>
+                <th>Movie Name</th>
+                <th>Rating</th>
+            </tr>
+            {% for item in result %}
+            <tr>
+                <td><a href="{{ url_for('movie_view', title=item.title, movie_id=item.movieId, result=result) }}" class="btn">{{item.title}} </a></td>
+                <td>{{item.rating}}</td>
+            </tr>
+            <br>
+            {% endfor %}
+            </table>
+            {% endif %}
+            <div class="msg">{{ msg }}</div>
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Index</h1>
+             </div></br></br></br>
+                <h1 class="bottom">
+                     Hi {{session.username}}!!</br></br> Welcome to the index page...
+                </h1></br></br></br>
+                <a href="{{ url_for('login') }}" class="btn">Logout</a>
+          </div>
+        </div>
+    </body>
+</html>
